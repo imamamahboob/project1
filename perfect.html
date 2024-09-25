@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Perfect Numbers</title>
+
+<script>
+
+function checkNum()
+{ 
+   var num=parseInt(document.getElementById("number").value);
+   var result=document.getElementById("result");
+
+    if(num<=0)
+   {   
+      result.innerText= "Please enter a positive integer!";
+   }
+   
+  else if(Number.isInteger(num))
+   { 
+       var sum=0;
+    for(var i=1; i<num;i++)
+     { 
+        if(num%i==0)
+             {sum=sum+i;}
+       }
+
+    if(sum==num && (sum+num)/2==num)
+     {   result.innerText=" The number " + num +" is a perfect number.";
+      }
+   else{  result.innerText="The number "+num+" is not a perfect number.";}
+}
+}
+</script>
+</head>
+
+<body>
+<h1>Perfect Number Validator</h1>
+Enter a number (only):<input type="text" id="number" required>
+<br>
+<input type="button" value="Click to check" onclick="checkNum()">
+<div id="result"></div>
+</body>
+</html>
